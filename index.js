@@ -6,6 +6,16 @@ function newImage(url, left, bottom){
     object.style.left = left + 'px'
     object.style.bottom = bottom + 'px'
     document.body.append(object)
+    object.addEventListener('click', function(){
+        object.style.left = left + 10 + 'px'
+        object.style.top = top + 20 + 'px'
+        object.style.filter = 'invert(.9)'
+    })
+    object.addEventListener('dblclick', function(){
+        object.style.left = left + 'px'
+        object.style.top = top + 'px'
+        object.style.filter = 'invert(0)'
+    })
     return object
 }
 
@@ -32,7 +42,6 @@ function newInventory(){
     inventory.style.justifyContent = 'space-evenly'
     inventory.style.border = '2px solid black'
     inventory.style.backgroundColor = 'brown'
-    
     document.body.append(inventory)
 }
 
